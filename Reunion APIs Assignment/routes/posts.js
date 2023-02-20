@@ -6,7 +6,7 @@ const requireLogin = require('../middleware/requireLogin');
 router.post('/createpost',requireLogin,(req,res)=>{
   const {title,description} = req.body 
   if(!title || !description){
-    return  res.status(422).json({error:"Plase add all the fields"})
+    return  res.status(422).json({error:"Please add all the fields"})
   }
   req.user.password = undefined
   const post = new Post({
